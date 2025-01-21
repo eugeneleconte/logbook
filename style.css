@@ -1,0 +1,823 @@
+body {
+       font-family: Muli, sans-serif;
+       margin: 0; /* Supprime les marges par défaut */
+       padding-top: 13.5rem; /* Ajoute un espace pour compenser la hauteur du header */
+       line-height: 1.6;
+       background-color: #f9f9f9;
+       color: rgba(49,42,37, 1);
+       justify-content: center;
+       }
+header {
+    position: fixed; /* Rendre le header fixe */
+    top: 0; /* Positionné tout en haut de la page */
+    left: 0; /* Étendre à partir de la gauche */
+    width: 100%; /* Occupe toute la largeur de l'écran */
+    font-family: Muli, sans-serif;
+    min-height: 10rem;
+    background: rgba(49,42,37, 1);
+    color: #fff;
+    padding-top: 0.5rem; /* Espacement vertical uniquement */
+    text-align: center;
+    box-shadow: 2px 2px 2px rgba(202,161,134, 0.15);
+    z-index: 1000; /* Assure que le header reste au-dessus d'autres éléments */
+}
+
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si besoin */
+    justify-content: center; /* alignement horizontal */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    text-align: center;
+    align-items: center; /* alignement vertical */
+    width: 100%; /* Assurez une largeur complète */
+    padding: 0; /* Ajoute un petit padding pour éviter que le contenu touche les bords */
+}
+
+.header-top{
+    flex: 7;
+    width: 100%; /* Supprime la restriction de largeur */
+    display: flex;
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    align-items: center;
+    padding-left: 1rem;
+}
+.header-top hr{
+    border: 0.1px solid rgba(249, 249, 249, 1);
+    font-weight: normal;
+    width: 90%;
+}
+
+.header-top h4{
+    color: #f9f9f9;
+    font-weight: normal;
+}
+
+.header-bottom {
+    flex: 1;
+    display: flex;
+    width: 90%; /* 95% max de la largeur */
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Inclut padding et bordures dans la largeur totale */
+}
+
+.header-left {
+    flex: 0 0 28%;
+    width: 100%; /* Supprime la restriction de largeur */
+    margin-left: 0rem;
+    display: flex;
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    justify-content: flex-start; /* Place les éléments complètement à gauche */
+    align-items: center;
+    gap: 1rem;
+    text-align: left; /* Texte aligné à gauche */
+}
+
+.header-left-left {
+    flex: 0;
+    display: flex; 
+    flex-shrink: 0; /*  L'élément ne rétrécira pas */
+}
+.header-left-right {
+    flex: 1;
+    display: flex; /* Assurez-vous que le texte reste dans une zone flexible */
+    justify-content: center; /* Place les éléments complètement à gauche */
+    align-items: center;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.header-left-right ul {
+    list-style-type: none; /* Remove bullet points for the main list */
+    padding-left: 0; /* Ensure no indentation */
+}
+
+.header-left-right ul li {
+    list-style-type: none; /* Remove bullet points for the main list items */
+}
+
+.header-left-right ul ul {
+    list-style-type: disc; /* Use solid bullet points (black circles) for nested list */
+    padding-left: 20px; /* Indentation for nested list */
+}
+
+.header-left-right ul ul li {
+    list-style-type: disc; /* Ensure the nested list items have bullet points */
+}
+
+.header-logo {
+    max-width: 9rem;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-top:1rem;
+}
+
+.header-center {
+    flex: 1; /* Chaque division prend un tiers de l'espace */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement le contenu dans chaque division */
+    text-align: center; /* Centrer le contenu horizontalement */
+}
+
+
+.header-center h1 {
+    margin: 0rem 0;
+    font-family: PT, serif;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.header-center h4 {
+    font-family: Muli, sans-serif;
+    margin: 0;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+}
+
+.header-center p {
+    font-family: Muli, sans-serif;
+    margin: 0;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+}
+
+.header-right{
+    flex: 0 0 28%; /* Chaque division prend un tiers de l'espace */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Aligne les éléments à gauche */
+    text-align: left; /* Centrer le contenu horizontalement */
+    padding-right: 1rem;
+    gap: 1rem; /* Espace entre les éléments */
+
+}
+.header-right ul {
+    list-style-type: none; /* Supprime les puces par défaut */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0;
+    text-align: left; /* Aligne le texte des bullets points */
+}
+
+.header-right ul li {
+    margin-bottom: 0.5rem;
+}
+
+.header-right ul li a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.header-right ul li a:hover {
+    text-decoration: underline;
+}   
+.container {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    align-items: stretch; /* Les sections prendront toutes la même hauteur */
+}
+
+
+.text-section {
+    flex: 1 1 49%; /* La section de texte occupe 49% de la largeur sur les grands écrans */
+    padding: 0.4rem 0.4rem 0.4rem 1rem; /* Réduit le padding autour de la section */
+    background: #fff;
+    border-radius: 8px;
+    max-width: 70%;
+    box-shadow: -4px 4px 3px -3px rgba(202,161,134, 0.15);
+    box-sizing: border-box; /* Assurez-vous que le padding ne modifie pas la taille totale */
+    justify-content: center; /* Aligne les éléments en haut */
+    display: flex;
+    flex-direction: column; /* Le texte se place en colonne pour mieux gérer les alignements */
+}
+
+.image-section {
+    flex: 1 1 35%;
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem; /* Réduit le padding autour de la section */
+    display: flex;
+    text-align: center;
+    flex-direction: column;  /* Ajoutez cette ligne pour empiler le titre et l'image */
+    align-items: center;     /* Centre les éléments horizontalement */
+    justify-content: center; /* Aligne les éléments en haut */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: -4px 4px 3px -3px rgba(202,161,134, 0.15);
+}
+
+.image-section img {
+   max-width: 16rem;
+   object-fit: contain;
+   padding: 0;
+   padding-bottom: 0.5rem;
+   margin: 0;
+
+}
+
+.emoji {
+    height: 1rem;
+    margin-bottom: 0;
+}
+
+.flag {
+    height: 1.5rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+.project-link {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-link a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.project-link .overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    margin: -1.4rem -1.4rem;
+    padding: 1.4rem 1.4rem; /* Réduit le padding autour de la section */
+    background-color: rgba(249, 249, 249, 0.0);
+    color: rgba(49,42,37, 1);
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: top 0.4s ease;
+    z-index: 10;
+}
+
+.project-link:hover .overlay {
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 0;
+}
+
+.color-darkblue {
+    color: rgba(49,42,37, 1);
+}
+
+.color-flashblue {
+    color: rgba(202,161,134, 1);
+}
+h2 {
+    font-family:PT, serif;
+    color: rgba(145,118,101, 1);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h4 {
+    color: rgba(49,42,37, 1);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h3{
+    text-align: center;
+    font-weight: normal;
+    margin-top: 1rem ;
+    margin-bottom:0rem;
+}
+
+a {
+    color: rgba(49,42,37, 1);
+    text-decoration: none;
+    display: inline-block; /* Pour que le lien n'ait pas d'espace sous lui */
+    margin: 0; /* Espace entre le texte et le lien */
+}
+
+a:hover {
+    /*ajouter des trucs*/
+}
+
+p {
+    margin: 0; /* Enlève le margin par défaut du paragraphe */
+}
+
+hr{
+    border: 0.5px solid rgba(202,161,134, 0.55);
+    width: 90%;
+    margin-top: 0;
+}
+
+/* Définir la hauteur du menu principal */
+:root {
+  --hauteur-menu: 2rem;
+}
+/* Sidenav menu */
+.sidenav {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 20rem;
+  text-align: left;
+  z-index: 100;
+  top: 0;
+  left: -20rem;
+  background-color: #f9f9f9;
+  padding-top: 1rem;
+  transition: left 0.5s ease;
+}
+.sidenav ul li a{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.sidenav  ul li{
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 1rem;
+}
+
+.sidenav  ul li ul{
+ list-style-type: disc;
+}
+
+.sidenav  ul li ul li::marker{
+  color: rgba(49,42,37, 1);
+}
+
+/* Sidenav menu links */
+.sidenav a {  
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: rgba(49,42,37, 1);
+  display: block;
+  transition: 0.3s;
+}
+.sidenav p{
+  font-size: 1rem;
+  color: rgba(49,42,37, 1);
+  background-color: #f9f9f9;
+  z-index: 100;
+}
+
+.sidenav a:hover {
+  color: rgba(202,161,134, 1);
+  background-color: #f9f9f9;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: #f9f9f9;
+  margin: 1rem;
+}
+
+/* Active class */
+.sidenav.active {
+  left: 0;
+  background-color: #f9f9f9;
+}
+
+
+/* Active class */
+.sidenav.active .burger-icon{
+  display: none;
+
+}
+
+/* Close btn */
+.sidenav .close {
+  position: fixed;
+  top: 0;
+  color: rgba(49,42,37, 1);
+  background: none;
+  margin-left: 14rem;
+  font-size: 2rem;
+}
+
+.sidenav .close:hover {
+    color: rgba(202,161,134, 1);
+    background: none;
+}
+
+.burger-icon{
+    display: none; 
+    position: fixed;
+}
+/* Icône burger */
+.emoji-burger{
+    height: 2rem;
+    padding: 2rem 2rem;
+    margin-bottom: 0;
+}
+
+.section-portfolio{
+    flex: 1 1 90%; /* La section de texte occupe 90% de la largeur sur les grands écrans */
+    padding: 0.4rem 0.4rem 0.4rem 1rem; /* Réduit le padding autour de la section */
+    background: #fff;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    max-width: 90%;
+    flex-direction: column ;
+    box-shadow: -4px 4px 3px -3px rgba(202,161,134, 0.15);
+    box-sizing: border-box; /* Assurez-vous que le padding ne modifie pas la taille totale */
+    justify-content: center; /* Aligne les éléments en haut */
+    display: flex;
+}
+
+.section-portfolio h2 {
+    flex: 1;
+    color: rgba(145,118,101, 1);
+    text-align: center;
+}
+
+.section-portfolio h4 {
+    flex: 1;
+    font-weight: normal;
+    text-decoration: underline;
+    color: rgba(49,42,37, 1);
+    text-align: left;
+}
+
+.section-portfolio p {
+    flex: 1;
+    text-align: justify;
+
+}
+.section-portfolio a {
+    flex: 1;
+    font-family: Muli, sans-serif;
+    color: rgba(202,161,134, 1);
+    text-decoration: underline;
+    text-align: center;
+}
+.section-portfolio p  {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    left: 0;
+}
+
+.section-portfolio ul  {
+    margin-top: 0;
+    padding-top: 0;
+    left: 0;
+}
+
+
+.section-portfolio-flex {
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* Affichage côte à côte */
+    gap: 1rem;
+    align-items:  ; /* Assure que les éléments enfants aient la même hauteur */
+}
+
+.section-portfolio-texte {
+    flex: 1 1 60%; /* La zone de texte occupe 60% de l'espace disponible */
+    max-width: 60%;
+    overflow: hidden; /* Empêche le débordement */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Gère l'espacement des blocs internes */
+}
+
+.section-portfolio-img {
+    flex: 1 1 40%; /* La zone image occupe 40% de l'espace disponible */
+    max-width: 100%;
+    max-height: 100%; /* Limite la hauteur pour correspondre à celle de .section-portfolio-texte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Cache le contenu débordant */
+    padding-top: 0rem; /* Espace interne autour du contenu */
+    box-sizing: border-box;
+}
+
+.slideshow-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Adapte la largeur au conteneur parent */
+    max-height: 100%; /* Limite la hauteur au conteneur parent */
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow-container img {
+    max-width: 100%; /* Redimensionne les images pour tenir dans le conteneur */
+    max-height: 17rem; /* Limite la hauteur des images */
+    object-fit: contain; /* Assure un redimensionnement proportionnel sans recadrage */
+    border-radius: 4px;    
+    box-shadow: 0 4px 3px -3px rgba(202,161,134, 0.15);
+}
+
+/* Hide the images by default */
+.mySlides {
+  flex: 1;
+  min-height: 90%;
+  display: none;
+  align-items: center;
+}
+
+/* Caption text */
+.text {
+  flex: 1;
+  color: rgba(49,42,37, 1);
+  font-size: 0.8rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.dot-container {
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin: 0 0.1rem;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgba(49,42,37, 1);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Applique un style de base pour tous les éléments sous .header-bottom */
+.header-bottom * {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  font-family: Muli, sans-serif;
+}
+
+/* Conteneur de navigation sticky */
+.header-bottom nav {
+  width: 100%;
+  font-size: 1rem;
+  position: sticky;  /* Rendre le menu sticky */
+  top: 0;
+  border-top: 0.5px solid #f9f9f9;
+  background-color: rgba(49,42,37, 0.00);  /* Fond de menu */
+  z-index: 1;  /* Assurer que le menu reste au-dessus des autres éléments */
+}
+
+.header-bottom nav:hover {
+    border-top: 1px solid rgba(145,118,101, 1);
+    background-color: #f9f9f9;
+    color: rgba(49,42,37, 1);
+}
+
+/* Liste principale des éléments de menu */
+.header-bottom nav > ul {
+  display: flex;
+  text-align: center;
+  height: var(--hauteur-menu);
+  padding: 0; /* Enlever tout padding par défaut */
+  list-style-type: none;
+  flex-direction: row;
+}
+
+/* Chaque élément de menu principal */
+.header-bottom nav > ul > li {
+  position: relative;  /* Permet de positionner le sous-menu relativement à l'élément parent */
+  height: 100%;
+  flex: 1;
+}
+
+/* Style des liens du menu principal */
+.header-bottom nav > ul > li > a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Centrer les liens horizontalement et verticalement */
+  text-decoration: none;
+  color: #f9f9f9;
+}
+
+.header-bottom nav:hover > ul > li > a{
+    color: rgba(49,42,37, 1);
+}
+
+
+/* L'animation de la flèche dans le menu déroulant */
+.menu-deroulant > a:after {
+  content: '❯';
+  color: #f9f9f9;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+/* Sous-menu */
+.sous-menu {
+  display: none;  /* Par défaut, caché */
+  position: absolute;  /* Positionner le sous-menu sous l'élément parent */
+  top: 100%;  /* Place le sous-menu juste sous l'élément parent */
+  left: 0;  /* Aligner le sous-menu avec l'élément parent */
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;  /* Animation pour l'apparition du sous-menu */
+}
+
+/* Élément du sous-menu */
+.sous-menu > li > a {
+  height: 2rem;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Lorsque l'élément du menu est survolé, changer la couleur */
+.header-bottom nav > ul > li:hover > a {
+  color: rgba(145,118,101, 1);
+}
+
+/* Lorsque l'élément du sous-menu est survolé */
+.sous-menu > li:hover {
+  background-color: rgba(145,118,101, 1);
+}
+
+.sous-menu > li:hover > a {
+  color: #f9f9f9;
+}
+
+/* Montre le sous-menu lors du survol du menu principal */
+.menu-deroulant:hover > .sous-menu {
+  display: block;  /* Affiche le sous-menu */
+  max-height: 5rem;  /* Permet l'extension complète du sous-menu */
+  opacity: 1;  /* Rend le sous-menu visible */
+}
+
+/* Ajouter un effet de rotation à la flèche lorsque le menu est survolé */
+@keyframes rotationFleche {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.menu-deroulant:hover > a:after {
+  animation: rotationFleche 0.2s linear forwards;
+}
+
+.pdf {
+        width: 100%;
+        aspect-ratio: 5/3;
+    }
+
+
+@keyframes rotationFleche {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(90deg);
+  }
+}
+
+.menu-deroulant:hover > a:after{
+    animation: rotationFleche 0.2s linear forwards;
+}
+
+@keyframes apparitionSousMenu {
+  0% {
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,0);
+    border-top: 3px solid rgba(145,118,101, 1);
+  }
+  30% {
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+  }
+  100% {
+    max-height: 50em;
+    border-top: 3px solid rgba(145,118,101, 1);
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+  }
+}
+
+.menu-deroulant:hover > .sous-menu {
+  animation: apparitionSousMenu 1s forwards;
+}
+
+@media (max-width: 768px) {
+
+    header{
+        padding-top: 0rem;
+        position: static;
+    }
+    body{
+        padding-top: 0rem;
+    }
+
+
+    .text-section, .section-portfolio {
+       max-width: 100%;
+       flex: 1 1 100%;
+    }
+    .image-section{
+        display: none;
+    }
+
+    .header-left, .header-right {
+        flex: 1; /* Réduire l'espace attribué pour conserver la répartition */
+    }
+
+    .header-logo{
+        width: 4rem;
+        margin-top: 1rem;
+    }
+    .header-left-right{
+        display: none;
+    }
+    .header-container {
+        flex-wrap: wrap; /* Forcer les divisions à passer à la ligne si nécessaire */
+        flex-direction: column;
+    }
+
+    .header-left, .header-center, .header-right {
+        flex: 100%; /* Chaque section prend toute la largeur */
+        margin-bottom: 1rem; /* Espacement entre les sections */
+        flex-direction: column;
+    }
+
+    .header-top{
+        flex: 100%;
+        flex-direction: column;
+    }
+
+    .header-bottom{
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .burger-icon {
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .sidenav{
+        display: block;
+    }
+
+    .section-portfolio-img{
+        display: none;
+    }
+    .section-portfolio-texte {
+        flex: 1 1 100%; /* La zone de texte occupe 60% de l'espace disponible */
+        max-width: 100%;
+    }
+
+}
+
+/* Menu principal visible sur les grands écrans */
+@media (min-width: 768px) {
+    .sidenav{
+        display: none;
+    }
+  }
