@@ -1,7 +1,11 @@
+.cache{
+    display: none;
+}
+
 body {
        font-family: Muli, sans-serif;
        margin: 0; /* Supprime les marges par défaut */
-       padding-top: 13.5rem; /* Ajoute un espace pour compenser la hauteur du header */
+       padding-top: 10.5rem; /* Ajoute un espace pour compenser la hauteur du header */
        line-height: 1.6;
        background-color: #f9f9f9;
        color: rgba(77,8,8, 1);
@@ -80,11 +84,13 @@ header {
 }
 .header-left-right {
     flex: 1;
+    padding: 0;
+    margin: 0;
     display: flex; /* Assurez-vous que le texte reste dans une zone flexible */
     justify-content: center; /* Place les éléments complètement à gauche */
     align-items: center;
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 
@@ -108,7 +114,7 @@ header {
 
 .header-logo {
     max-width: auto;
-    max-height: 2rem;
+    max-height: 6rem;
     margin-bottom: 0.5rem;
     margin-top:0.5rem;
 }
@@ -509,6 +515,8 @@ hr{
     box-sizing: border-box;
 }
 
+
+
 .slideshow-container {
     flex: 1;
     display: flex;
@@ -528,6 +536,62 @@ hr{
 }
 
 /* Hide the images by default */
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.slideshow-container {
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+.mySlides img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Styles des boutons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;  /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
+    background-color: rgba(249, 249, 249, 0.3); /* Fond semi-transparent */
+    color: rgba(77,8,8, 1);
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px; /* Centrer le texte verticalement */
+    border-radius: 50%; /* Boutons arrondis */
+    border: none;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.prev { 
+    left: 10px;  /* Positionné sur le côté gauche */
+}
+
+.next { 
+    right: 10px; /* Positionné sur le côté droit */
+}
+
+/* Effet au survol */
+.prev:hover, .next:hover {
+    background-color: rgba(249, 249, 249, 0.5);
+}
+
+
+/*____________*/
 .mySlides {
   flex: 1;
   min-height: 90%;
@@ -557,7 +621,7 @@ hr{
   height: 0.5rem;
   width: 0.5rem;
   margin: 0 0.1rem;
-  background-color: #d3d3d3;
+  background-color: lightgrey;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
